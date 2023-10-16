@@ -21,6 +21,6 @@ git clone https://github.com/Sefdine/Docker_initialization.git
 Open the terminal and go in the folder where you have your project. Run this command :
 
 ```
-docker build -t data-processing-app
+docker build -t data-processing-app .
 ```
 
