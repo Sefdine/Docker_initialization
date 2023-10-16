@@ -1,5 +1,9 @@
+import os
 import sqlite3
 import pandas as pd
+
+# Get the absolute path to the database file
+db_path = os.path.join(os.path.dirname(__file__), 'database.db')
 
 # Simulated data ingestion
 data = {
@@ -12,7 +16,7 @@ df = pd.DataFrame(data)
 processed_data = df.groupby('Name').mean()
 
 # Storing data in SQLite database
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect(db_path)
 processed_data.to_sql('processed_data', conn, if_exists='replace', index=False)
 conn.close()
 
